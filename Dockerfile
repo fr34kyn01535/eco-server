@@ -1,5 +1,7 @@
-FROM mono:slim
+FROM debian:stretch-slim
 
+### Install Dependencies (Mono, unzip, ...)
+### TODO: Move to base image
 ADD install_deps.sh / 
 RUN /install_deps.sh 
 
