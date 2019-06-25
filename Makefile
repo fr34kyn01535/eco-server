@@ -1,7 +1,7 @@
 
-ECO_VERSION ?= 0.7.3.3-beta
+ECO_VERSION ?= 0.8.2.3-beta
 
-DOCKER_IMAGE = t3hk0d3/eco-server
+DOCKER_IMAGE = fr34kyn01535/eco-server
 DOCKER_TARGET = ${DOCKER_IMAGE}:${ECO_VERSION}
 
 all: build push clean
