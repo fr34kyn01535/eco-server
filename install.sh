@@ -26,7 +26,7 @@ echo $SHA256SUM | sha256sum -c - || exit 1
 
 # Extract server achive
 unzip -q $ECO_LOCAL_FILE -d $ECO_INSTALL_DIR
-
+rm $ECO_LOCAL_FILE
 # Move defaults so they could be copied on start, not overwritten by mounted volumes
 mv Configs DefaultConfigs
 mv Storage DefaultStorage
