@@ -1,5 +1,5 @@
 
-ECO_VERSION ?= 0.8.2.8-beta
+ECO_VERSION ?= 0.8.2.9-beta
 
 DOCKER_IMAGE = fr34kyn01535/eco-server
 DOCKER_TARGET = ${DOCKER_IMAGE}:${ECO_VERSION}
