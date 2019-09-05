@@ -1,15 +1,11 @@
 
-ECO_VERSION ?= 0.8.2.9-beta
-
 DOCKER_IMAGE = fr34kyn01535/eco-server
-DOCKER_TARGET = ${DOCKER_IMAGE}:${ECO_VERSION}
+DOCKER_TARGET = ${DOCKER_IMAGE}:latest
 
 all: build push clean
 
 build:
 	docker build --rm \
-	--label "eco.version=${ECO_VERSION}" \
-	--build-arg ECO_VERSION="${ECO_VERSION}" \
 	-t ${DOCKER_TARGET} \
 	-t ${DOCKER_IMAGE} \
 	.
