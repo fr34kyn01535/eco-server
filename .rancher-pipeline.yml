@@ -1,11 +1,8 @@
-﻿stages:
+stages:
 - name: Compile
   steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: fr34kyn01535/eco-server
-      pushRemote: true
-      registry: index.docker.io
+  - runScriptConfig:
+      image: julienlecomte/docker-make
+      shellScript: make
 timeout: 60
 notification: {}
