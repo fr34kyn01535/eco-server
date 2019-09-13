@@ -2,7 +2,15 @@ stages:
 - name: Compile
   steps:
   - runScriptConfig:
-      image: julienlecomte/docker-make
-      shellScript: make
+      image: ubuntu
+      shellScript: apt-get update && apt-get install -y wget && export ECO_VERSION=$(wget
+        -qO- https://s3-us-west-2.amazonaws.com/eco-releases/\?prefix\=EcoServer |
+        grep -o -m 1 '[^>]*-beta.zip' | tail -n 1 | grep -Po '\d.\d.\d.\d')
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: docker.pkg.github.com/fr34kyn01535/eco-server/eco-server:${ECO_VERSION}
+      pushRemote: true
+      registry: docker.pkg.github.com
 timeout: 60
 notification: {}
