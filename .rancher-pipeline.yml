@@ -1,11 +1,11 @@
-﻿stages:
+stages:
 - name: Compile
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: fr34kyn01535/eco-server
+      tag: docker.pkg.github.com/fr34kyn01535/eco-server/eco-server:latest
       pushRemote: true
-      registry: index.docker.io
+      registry: docker.pkg.github.com
 timeout: 60
 notification: {}
